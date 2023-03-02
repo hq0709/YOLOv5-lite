@@ -1,0 +1,17 @@
+window
+train
+python train.py --weights None --data .\data\h_canpan.yaml --img-size 320 320 --epochs 200 --workers 3 --batch-size 128
+python train.py --weights D:\data\work\canpan\prj\YOLOv5-Lite-master\runs\train\exp24\weights\best.pt --data .\data\h_canpan.yaml --img-size 320 320 --epochs 200 --workers 3 --batch-size 64
+python train.py --weights D:\data\work\canpan\prj\YOLOv5-Lite-master\runs\train\exp59\weights\last.pt --data .\data\h_canpan.yaml --img-size 320 320 --epochs 200 --workers 3 --batch-size 128  --hyp .\data\hyp.canpanfinetune.yaml
+python train.py --weights D:\data\work\canpan\prj\YOLOv5-Lite-master\runs\train\exp104\weights\last.pt --data .\data\h_canpan.yaml --img-size 320 320 --epochs 100 --workers 3 --batch-size 128  --hyp .\data\hyp.canpanfinetune.yaml
+python train.py --weights D:\data\work\canpan\prj\YOLOv5-Lite-master\runs\train\exp106\weights\last.pt --data .\data\h_canpan.yaml --img-size 320 320 --epochs 100 --workers 3 --batch-size 128  --hyp .\data\hyp.canpanfinetune.yaml
+
+python train.py --data .\data\h_canpan_20.yaml --img-size 320 320 --epochs 80 --workers 3 --batch-size 128  --hyp .\data\hyp.canpan.yaml
+python train.py --weights D:\data\work\canpan\prj\YOLOv5-Lite-master\runs\train\exp27\weights\last.pt --data .\data\h_canpan_20.yaml --img-size 320 320 --epochs 80 --workers 2 --batch-size 64  --hyp .\data\hyp.canpanfinetune.yaml
+
+
+test
+python detect.py --weights runs/train/exp/weights/last.pt --source D:\data\work\jgtd\head\test\JPEGImages --img-size 544 --conf-thres 0.8
+
+
+python train.py --weights "runs\train\exp90\weights\best.pt" --data .\data\h_canpan.yaml --img-size 320 320 --epochs 150 --workers 3 --batch-size 96  --hyp .\data\hyp.canpanfinetune.yaml

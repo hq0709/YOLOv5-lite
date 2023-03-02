@@ -1,0 +1,56 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_30128/fast"
+/usr/bin/make -f CMakeFiles/cmTC_30128.dir/build.make CMakeFiles/cmTC_30128.dir/build
+make[1]: Entering directory '/tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_30128.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_30128.dir/CheckSymbolExists.c.o   -c /tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_30128
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30128.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     CMakeFiles/cmTC_30128.dir/CheckSymbolExists.c.o  -o cmTC_30128 
+CMakeFiles/cmTC_30128.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.c:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_30128.dir/build.make:97: recipe for target 'cmTC_30128' failed
+make[1]: *** [cmTC_30128] Error 1
+make[1]: Leaving directory '/tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_30128/fast' failed
+make: *** [cmTC_30128/fast] Error 2
+
+File /tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ebbc9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ebbc9.dir/build.make CMakeFiles/cmTC_ebbc9.dir/build
+make[1]: Entering directory '/tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ebbc9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ebbc9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ebbc9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebbc9.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ebbc9.dir/CheckFunctionExists.c.o  -o cmTC_ebbc9 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ebbc9.dir/build.make:97: recipe for target 'cmTC_ebbc9' failed
+make[1]: *** [cmTC_ebbc9] Error 1
+make[1]: Leaving directory '/tmp/tmp.BmoP3Rumpg/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ebbc9/fast' failed
+make: *** [cmTC_ebbc9/fast] Error 2
+
+
